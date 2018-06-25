@@ -7,3 +7,9 @@ Run
  - `composer install` to install all dependencies
  - `php -S 127.0.0.1:8000 -t public` for the builtin webserver 
  - `./rr serve -v -d` for RoadRunner server
+
+
+# To rebuild RoadRunner:
+ - `cd ./vendor/spiral/roadrunner`
+ - `make`
+ - `cp ./rr ../../../rr`
