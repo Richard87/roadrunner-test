@@ -68,7 +68,8 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
-        ]
+        ],
+        "build-rr": "cd vendor/spiral/roadrunner && make && cp rr ../../../"
     },
     "conflict": {
         "symfony/symfony": "*"
