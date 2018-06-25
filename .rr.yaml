@@ -1,0 +1,25 @@
+# rpc bus allows php application and external clients to talk to rr services.
+rpc:
+  enable: true
+
+  # rpc connection DSN. Supported TCP and Unix sockets.
+  listen: tcp://127.0.0.1:6001
+http:
+  enable:     true
+  address:    0.0.0.0:8006
+  maxRequest: 200
+  uploads:
+    forbid: [".php", ".exe", ".bat"]
+  workers:
+    command:  "php psr-worker.php"
+    relay:    "pipes" # "tcp://127.0.0.1:6002" # "unix://var/roadrunner.worker.sock" # "pipes"
+    pool:
+      numWorkers: 4
+      maxJobs:  0
+      allocateTimeout: 60000000000
+      destroyTimeout:  30000000000
+
+static:
+  enable:  true
+  dir:   "public"
+  forbid: [".php", ".htaccess", "package.json", "yarn.lock"]
