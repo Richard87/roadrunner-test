@@ -10,6 +10,4 @@ Run
 
 
 # To rebuild RoadRunner:
- - `cd ./vendor/spiral/roadrunner`
- - `make`
- - `cp ./rr ../../../rr`
+ - `composer build-rr`
